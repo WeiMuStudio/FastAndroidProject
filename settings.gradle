@@ -1,0 +1,9 @@
+include ':app', ':extension'
+
+//framework
+include ':third-party', ':core', ':uicore'
+project(':uicore').projectDir = new File('/framework/uicore')
+project(':core').projectDir = new File('/framework/core')
+project(':third-party').projectDir = new File('/framework/third-party')
+//presentation need module
+include ':repository', ':domain'

@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId project.ANDROID_APPLICATION_ID
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode project.ANDROID_APPLICATION_VERSION_CODE as int
+        versionName getAppVersionName()
+        multiDexEnabled true
+        resConfigs "zh"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ def getAppVersionName() {
+    def buildNumber = project.BUILD_NUMBER as int
+    if (buildNumber > 0) {
+        return "${project.MAJOR_VERSION_NUMBER}.${project.MINOR_VERSION_NUMBER}.${project.REVISION_NUMBER}.${project.BUILD_NUMBER}"
+    } else {
+        return "${project.MAJOR_VERSION_NUMBER}.${project.MINOR_VERSION_NUMBER}.${project.REVISION_NUMBER}"
+    }
+
+}
+dependencies {
+    implementation project(':domain')
+    implementation project(':repository')
+    implementation project(':uicore')
+    implementation project(':core')
+    implementation project(':third-party')
+    implementation deps.extension.log
+    implementation deps.extension.router
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    testImplementation deps.junit
+    androidTestImplementation deps.support.test.runner
+    androidTestImplementation deps.support.test.expresso
+}

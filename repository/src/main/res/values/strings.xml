@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">repository</string>
+    <string name="msg_server_failure">网络错误</string>
+    <string name="msg_connection_failure">网络连接异常，请检查网络</string>
+    <string name="msg_net_time_out">网络超时</string>
+    <string name="msg_ssl_handshake_failure">网络错误</string>
+</resources>

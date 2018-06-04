@@ -1,0 +1,73 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.versions = [
+            'minSdk'        : 19,
+            'compileSdk'    : 27,
+            'supportLibrary': '27.0.2'
+    ]
+    ext.deps = [
+            'support'  : [
+                    'compat'      : "com.android.support:appcompat-v7:${versions.supportLibrary}",
+                    'design'      : "com.android.support:design:${versions.supportLibrary}",
+                    'recyclerview': "com.android.support:recyclerview-v7:${versions.supportLibrary}",
+                    'gridlayout'  : "com.android.support:gridlayout-v7:${versions.supportLibrary}",
+                    'constraint'  : 'com.android.support.constraint:constraint-layout:1.0.2',
+                    'flexbox'     : 'com.google.android:flexbox:0.2.7',
+                    'test'        : [
+                            'runner'  : 'com.android.support.test:runner:1.0.1',
+                            'expresso': 'com.android.support.test.espresso:espresso-core:3.0.1',
+                    ]
+            ],
+            'rx'       : [
+                    'java'   : 'io.reactivex.rxjava2:rxjava:2.0.1',
+                    'android': 'io.reactivex.rxjava2:rxandroid:2.0.1'
+            ],
+            'glide'    : [
+                    'core': 'com.github.bumptech.glide:glide:4.4.0',
+                     'processor': 'com.github.bumptech.glide:compiler:4.4.0'
+            ],
+            'gson'     : 'com.google.code.gson:gson:2.8.1',
+            'retrofit' : 'com.squareup.retrofit2:retrofit:2.2.0',
+            'junit'    : 'junit:junit:4.12',
+            'extension': [
+                    'router'           : 'org.luyinbros.flight:flight:1.0.4.2',
+                    'statusBar'        : 'org.luyinbros.statusbar:statusBar:0.0.2',
+                    'permission'       : 'org.luyinbros.permission:guardian:1.0.3-alpha2',
+                    'beanMapper'       : 'org.luyinbros.beanmapper:beanMapper:0.0.1-alpha6',
+                    'error'            : 'org.luyinbros.error:error:0.0.1',
+                    'log'              : 'org.luyinbros.log:log:0.0.1-alpha1',
+                    'viewManagerLayout': 'org.luyinbros.widget:viewManagerLayout:0.0.1-alpha4',
+                    'broadcast'        : 'org.luyinbros.core:androidbroadcast:0.0.1-alpha2',
+                    'presentation'     : 'org.luyinbros.architecture:presentation:0.0.1-alpha1',
+                    'drawable'         : 'org.luyinbros.drawable:drawable:0.0.1-alpha4@aar'
+            ]
+
+    ]
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://dl.bintray.com/rainyeveningstreet/OwlClaw"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
