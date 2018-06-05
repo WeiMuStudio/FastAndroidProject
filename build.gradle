@@ -24,8 +24,8 @@ buildscript {
                     'android': 'io.reactivex.rxjava2:rxandroid:2.0.1'
             ],
             'glide'    : [
-                    'core': 'com.github.bumptech.glide:glide:4.4.0',
-                     'processor': 'com.github.bumptech.glide:compiler:4.4.0'
+                    'core'     : 'com.github.bumptech.glide:glide:4.4.0',
+                    'processor': 'com.github.bumptech.glide:compiler:4.4.0'
             ],
             'gson'     : 'com.google.code.gson:gson:2.8.1',
             'retrofit' : 'com.squareup.retrofit2:retrofit:2.2.0',
@@ -40,7 +40,8 @@ buildscript {
                     'viewManagerLayout': 'org.luyinbros.widget:viewManagerLayout:0.0.1-alpha4',
                     'broadcast'        : 'org.luyinbros.core:androidbroadcast:0.0.1-alpha2',
                     'presentation'     : 'org.luyinbros.architecture:presentation:0.0.1-alpha1',
-                    'drawable'         : 'org.luyinbros.drawable:drawable:0.0.1-alpha4@aar'
+                    'drawable'         : 'org.luyinbros.drawable:drawable:0.0.1-alpha4@aar',
+                    'common'           : 'org.weimu.common:common:0.0.0.1'
             ]
 
     ]
@@ -51,7 +52,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
-        
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

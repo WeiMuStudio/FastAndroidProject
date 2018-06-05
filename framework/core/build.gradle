@@ -29,6 +29,7 @@ dependencies {
     api deps.rx.android
     api deps.support.compat
     api deps.extension.error
+    api deps.extension.common
 
     testImplementation deps.junit
     androidTestImplementation deps.support.test.runner
