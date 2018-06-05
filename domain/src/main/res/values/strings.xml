@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">domain</string>
+    <string name="msg.failure.login.account_empty">账号不能为空</string>
+    <string name="msg.failure.login.passport_empty">密码不能为空</string>
 </resources>

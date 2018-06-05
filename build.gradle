@@ -34,7 +34,7 @@ buildscript {
                     'router'           : 'org.luyinbros.flight:flight:1.0.4.2',
                     'statusBar'        : 'org.luyinbros.statusbar:statusBar:0.0.2',
                     'permission'       : 'org.luyinbros.permission:guardian:1.0.3-alpha2',
-                    'beanMapper'       : 'org.luyinbros.beanmapper:beanMapper:0.0.1-alpha6',
+                    'beanMapper'       : 'org.luyinbros.beanmapper:beanMapper:0.0.1-alpha7',
                     'error'            : 'org.luyinbros.error:error:0.0.1',
                     'log'              : 'org.luyinbros.log:log:0.0.1-alpha1',
                     'viewManagerLayout': 'org.luyinbros.widget:viewManagerLayout:0.0.1-alpha4',

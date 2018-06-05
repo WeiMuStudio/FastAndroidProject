@@ -37,7 +37,7 @@ dependencies {
     implementation project(':third-party')
     implementation deps.extension.log
     implementation deps.extension.router
-
+    implementation deps.extension.presentation
     implementation 'com.android.support:multidex:1.0.3'
 
     testImplementation deps.junit

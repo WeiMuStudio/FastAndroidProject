@@ -26,6 +26,8 @@ android {
 
 dependencies {
     compileOnly project(':core')
+    compileOnly project(':repository')
+    implementation deps.extension.beanMapper
     testImplementation deps.junit
     androidTestImplementation deps.support.test.runner
     androidTestImplementation deps.support.test.expresso
