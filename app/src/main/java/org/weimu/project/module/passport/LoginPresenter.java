@@ -2,9 +2,9 @@ package org.weimu.project.module.passport;
 
 import org.luyinbros.core.rx.CombineDisposable;
 import org.luyinbros.domain.LoginCase;
-import org.luyinbros.domain.core.CaseFactory;
-import org.luyinbros.domain.core.SingleTaskObserver;
-import org.luyinbros.error.ErrorHandler;
+import org.luyinbros.domain.core.CaseFactoryClient;
+import org.luyinbros.domain.core.DomainException;
+import org.luyinbros.domain.core.SingleDomainObserver;
 import org.luyinbros.presentation.BasePresenter;
 import org.luyinbros.repository.data.LoginBean;
 
@@ -20,7 +20,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginView>
     @Override
     public void onAttach(LoginContract.LoginView view) {
         super.onAttach(view);
-        loginCase = CaseFactory.get(getApplicationContext()).getCase(LoginCase.class);
+        loginCase = CaseFactoryClient.get(getApplicationContext()).loginCase();
         combineDisposable = new CombineDisposable();
     }
 
@@ -35,7 +35,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginView>
         loginCase.login(account, passport)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleTaskObserver<LoginBean>() {
+                .subscribe(new SingleDomainObserver<LoginBean>() {
                     @Override
                     public void onStart(Disposable disposable) {
                         mView.setLoginButtonEnable(false);
@@ -49,9 +49,9 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginView>
                     }
 
                     @Override
-                    public void onError(ErrorHandler errorHandler) {
+                    public void onFailure(DomainException e) {
                         mView.setLoginButtonEnable(true);
-                        mView.loginFailure(errorHandler.errorMessage());
+                        mView.loginFailure(e.message());
                     }
                 });
     }

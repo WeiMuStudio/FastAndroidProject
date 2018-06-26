@@ -32,16 +32,12 @@ buildscript {
             'junit'    : 'junit:junit:4.12',
             'extension': [
                     'router'           : 'org.luyinbros.flight:flight:1.0.4.2',
-                    'statusBar'        : 'org.luyinbros.statusbar:statusBar:0.0.2',
-                    'permission'       : 'org.luyinbros.permission:guardian:1.0.3-alpha2',
-                    'beanMapper'       : 'org.luyinbros.beanmapper:beanMapper:0.0.1-alpha7',
-                    'error'            : 'org.luyinbros.error:error:0.0.1',
                     'log'              : 'org.luyinbros.log:log:0.0.1-alpha1',
                     'viewManagerLayout': 'org.luyinbros.widget:viewManagerLayout:0.0.1-alpha4',
-                    'broadcast'        : 'org.luyinbros.core:androidbroadcast:0.0.1-alpha2',
                     'presentation'     : 'org.luyinbros.architecture:presentation:0.0.1-alpha1',
                     'drawable'         : 'org.luyinbros.drawable:drawable:0.0.1-alpha4@aar',
-                    'common'           : 'org.weimu.common:common:0.0.0.1'
+                    'common'           : 'org.weimu.common:common:0.0.0.3',
+                    'bean'             : 'org.luyinbros.bean:bean:0.0.1-test1'
             ]
 
     ]
@@ -51,7 +47,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.1.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

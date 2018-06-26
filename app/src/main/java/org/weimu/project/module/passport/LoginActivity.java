@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import org.luyinbros.presentation.ViewActivity;
-import org.weimu.common.ToastUtils;
+import org.weimu.common.view.ToastUtils;
 import org.weimu.project.R;
 
 public class LoginActivity extends ViewActivity<LoginContract.LoginPresenter> implements LoginContract.LoginView {

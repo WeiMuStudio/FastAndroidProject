@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion versions.compileSdk
 
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
         versionCode 1
         versionName "1.0"
 
@@ -28,8 +28,8 @@ dependencies {
     api deps.rx.java
     api deps.rx.android
     api deps.support.compat
-    api deps.extension.error
     api deps.extension.common
+
 
     testImplementation deps.junit
     androidTestImplementation deps.support.test.runner

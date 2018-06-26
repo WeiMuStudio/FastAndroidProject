@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion versions.compileSdk
 
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +33,6 @@ dependencies {
     api deps.support.flexbox
     api deps.extension.viewManagerLayout
 
-    api deps.extension.statusBar
     api deps.extension.drawable
     testImplementation deps.junit
     androidTestImplementation deps.support.test.runner

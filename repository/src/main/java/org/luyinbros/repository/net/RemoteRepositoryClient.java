@@ -25,6 +25,9 @@ public class RemoteRepositoryClient {
     public static final int DEFAULT = 0;
     private static SparseArray<Retrofit> httpClientArray = new SparseArray<>();
 
+    public static Retrofit getDefault(Context context) {
+        return get(context, DEFAULT);
+    }
 
     public static Retrofit get(Context context, int type) {
         Retrofit retrofit = httpClientArray.get(DEFAULT);

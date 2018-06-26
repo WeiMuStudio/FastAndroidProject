@@ -2,4 +2,11 @@
     <string name="app_name">domain</string>
     <string name="msg.failure.login.account_empty">账号不能为空</string>
     <string name="msg.failure.login.passport_empty">密码不能为空</string>
+
+
+    <!--仓库异常-->
+    <string name="msg_server_failure">网络错误</string>
+    <string name="msg_connection_failure">网络连接异常，请检查网络</string>
+    <string name="msg_net_time_out">网络超时</string>
+    <string name="msg_ssl_handshake_failure">网络错误</string>
 </resources>
