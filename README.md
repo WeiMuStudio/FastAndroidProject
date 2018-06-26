@@ -19,15 +19,15 @@ Framework
 --------
 * **uicore**: 内置默认视图样式、视图标准以及视图库
 注：dialog创建必须通过DialogFactory进行处理
-* **core**:包含通用工具类、事件总线、图片加载、权限等
-* **third-party**:包含第三方框架，一般为wrapper模式，屏蔽原始第三方实现方式
+* **core**:包含通用工具类、图片加载、权限等
+* **third-party**:包含第三方框架，一般屏蔽原始第三方实现方式。
 注：第三方框架不等于第三方库，例如支付等为第三方框架、RxJava不是
 * **Log**:日志打印等。
 * **router**: activity跳转协议
 
 Domain
 --------
-领域模块，文件以XXXCase命名，根据项目来创建这个module,为表现层的P层提供方法(主要是接口)
+领域模块，文件以XXXCase命名，实现app所有业务
 
 Repository
 --------
@@ -47,6 +47,10 @@ Core Support
 * **GSON**:一个Json转Bean的库 [link][6]
 * **Android Library**:google官方的工具库
 * **Glide**: 图片加载框架[link][7]
+* **Flight**: Android 路由器
+* **presentation**: MVP和MVC快速开发
+* **bean**: 最原始工厂模式
+* **common**: 公共工具库
 
 Thanks
 --------
