@@ -46,7 +46,7 @@ public final class CaseThrowableFactory {
         } else if (CompatHttpException.equals(e)) {
             return new DomainException(CaseThrowableFactory.httpMessage(), CompatHttpException.create(e));
         } else if (e instanceof ConnectException) {
-            return new DomainException(CaseThrowableFactory.connectMessage(), CompatHttpException.create(e));
+            return new DomainException(CaseThrowableFactory.connectMessage(),e);
         } else if (e instanceof SSLHandshakeException) {
             return new DomainException(CaseThrowableFactory.httpMessage(), e);
         } else if (e instanceof SocketTimeoutException || e instanceof UnknownHostException) {

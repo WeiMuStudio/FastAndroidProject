@@ -39,7 +39,7 @@ dependencies {
 
     compileOnly project(':core')
     implementation deps.extension.log
-
+    implementation deps.extension.bean
     testImplementation deps.junit
     androidTestImplementation deps.support.test.runner
     androidTestImplementation deps.support.test.expresso
