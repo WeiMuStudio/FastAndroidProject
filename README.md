@@ -21,7 +21,14 @@ Framework
 注：dialog创建必须通过DialogFactory进行处理
 * **core**:包含通用工具类、图片加载、权限等
 * **third-party**:包含第三方框架，一般屏蔽原始第三方实现方式。
-注：第三方框架不等于第三方库，例如支付等为第三方框架、RxJava不是
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：第三方框架不等于第三方库，例如支付等为第三方框架、RxJava不是.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特殊情况：
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;微信支付，支付宝等这类属于独一无二的使用，这种不需要wrapper，直接使用即可。
+面部识别，一般IM等其他平台也有具体实现，为了方便替换，才需要wrapper
+
 * **Log**:日志打印等。
 * **router**: activity跳转协议
 
