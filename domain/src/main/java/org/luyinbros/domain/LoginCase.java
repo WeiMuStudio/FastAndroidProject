@@ -1,11 +1,11 @@
 package org.luyinbros.domain;
 
-import org.luyinbros.repository.data.LoginBean;
+import org.luyinbros.repository.data.LoginInfoEntity;
 
 import io.reactivex.Observable;
 
 
 public interface LoginCase {
 
-    Observable<LoginBean> login(String account, String passport);
+    Observable<LoginInfoEntity> login(String account, String passport);
 }

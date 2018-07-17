@@ -2,6 +2,7 @@ package org.luyinbros.repository.exception;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 
+//TODO check this
 public class CompatHttpException extends Exception {
     private int code;
     private String message;

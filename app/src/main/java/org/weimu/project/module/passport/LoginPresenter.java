@@ -6,7 +6,7 @@ import org.luyinbros.domain.core.CaseFactoryClient;
 import org.luyinbros.domain.core.DomainException;
 import org.luyinbros.domain.core.SingleDomainObserver;
 import org.luyinbros.presentation.BasePresenter;
-import org.luyinbros.repository.data.LoginBean;
+import org.luyinbros.repository.data.LoginInfoEntity;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -35,7 +35,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginView>
         loginCase.login(account, passport)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleDomainObserver<LoginBean>() {
+                .subscribe(new SingleDomainObserver<LoginInfoEntity>() {
                     @Override
                     public void onStart(Disposable disposable) {
                         mView.setLoginButtonEnable(false);
@@ -43,7 +43,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginView>
                     }
 
                     @Override
-                    public void onSuccess(LoginBean value) {
+                    public void onSuccess(LoginInfoEntity value) {
                         mView.setLoginButtonEnable(true);
                         mView.loginSuccess();
                     }

@@ -22,15 +22,17 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 
 public class RemoteRepositoryClient {
-    public static final int DEFAULT = 0;
+    private static final int DEFAULT = 0;
     private static SparseArray<Retrofit> httpClientArray = new SparseArray<>();
+    public static final String HEADER_CLIENT_NO_LOGIN_REQUEST = "Android_Client_No_Login_Request:1";
 
     public static Retrofit getDefault(Context context) {
-        return get(context, DEFAULT);
+        return getDefaultClient(context.getApplicationContext(), DEFAULT);
     }
 
-    public static Retrofit get(Context context, int type) {
-        Retrofit retrofit = httpClientArray.get(DEFAULT);
+
+    private static Retrofit getDefaultClient(Context context, int type) {
+        Retrofit retrofit = httpClientArray.get(type);
         if (retrofit == null) {
             OkHttpClient okHttpClient = new OkHttpClient
                     .Builder()
