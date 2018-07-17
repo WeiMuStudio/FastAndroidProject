@@ -2,8 +2,8 @@ package org.luyinbros.repository.net;
 
 import okhttp3.RequestBody;
 
-public interface RequestParameter {
+public interface RequestBodyParameter {
 
-    RequestBody getRequestBody();
+    RequestBody requestBody();
 
 }

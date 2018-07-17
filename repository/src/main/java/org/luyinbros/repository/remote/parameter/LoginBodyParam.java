@@ -1,14 +1,14 @@
 package org.luyinbros.repository.remote.parameter;
 
 import org.luyinbros.repository.core.ParamFactory;
-import org.luyinbros.repository.net.RequestParameter;
+import org.luyinbros.repository.net.RequestBodyParameter;
 
 import okhttp3.RequestBody;
 
-public class LoginRequestParam implements RequestParameter {
+public class LoginBodyParam implements RequestBodyParameter {
 
     @Override
-    public RequestBody getRequestBody() {
+    public RequestBody requestBody() {
         return ParamFactory.jsonParamBody(this);
     }
 }

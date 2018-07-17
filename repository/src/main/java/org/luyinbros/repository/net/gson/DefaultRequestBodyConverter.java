@@ -2,7 +2,7 @@ package org.luyinbros.repository.net.gson;
 
 import android.support.annotation.NonNull;
 
-import org.luyinbros.repository.net.RequestParameter;
+import org.luyinbros.repository.net.RequestBodyParameter;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -28,8 +28,8 @@ final class DefaultRequestBodyConverter<T> implements Converter<T, RequestBody> 
 
     @Override
     public RequestBody convert(@NonNull T value) throws IOException {
-        if (value instanceof RequestParameter) {
-            return ((RequestParameter) value).getRequestBody();
+        if (value instanceof RequestBodyParameter) {
+            return ((RequestBodyParameter) value).requestBody();
         }
 
         Buffer buffer = new Buffer();

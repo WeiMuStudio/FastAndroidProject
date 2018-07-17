@@ -1,7 +1,7 @@
 package org.luyinbros.repository.remote;
 
 import org.luyinbros.repository.data.LoginInfoEntity;
-import org.luyinbros.repository.remote.parameter.LoginRequestParam;
+import org.luyinbros.repository.remote.parameter.LoginBodyParam;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
@@ -19,5 +19,5 @@ public interface RemotePassportRepository {
 
 
     @POST("www.baddd.com")
-    Observable<LoginInfoEntity> loginV2(@Body LoginRequestParam param);
+    Observable<LoginInfoEntity> loginV2(@Body LoginBodyParam param);
 }
