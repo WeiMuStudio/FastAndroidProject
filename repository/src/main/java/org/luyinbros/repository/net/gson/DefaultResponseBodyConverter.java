@@ -19,11 +19,11 @@ import retrofit2.Converter;
  * Author: 洪培林
  * Date: 2017-04-12 18:11
  */
-final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
+final class DefaultResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     private final TypeAdapter<T> mBasicAdapter;
     private Type type;
 
-    GsonResponseBodyConverter(TypeAdapter<T> basicAdapter, Type type) {
+    DefaultResponseBodyConverter(TypeAdapter<T> basicAdapter, Type type) {
         mBasicAdapter = basicAdapter;
         this.type = type;
     }
@@ -41,8 +41,7 @@ final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         if (TextUtils.isEmpty(data)
                 || data.equalsIgnoreCase("null")
                 || data.equals("{}")
-                || rootElement.isJsonNull()
-               ) {
+                || rootElement.isJsonNull()) {
             return emptyResult();
         } else if (rootElement.isJsonObject()) {
             return presentResult(mBasicAdapter.fromJson(data));

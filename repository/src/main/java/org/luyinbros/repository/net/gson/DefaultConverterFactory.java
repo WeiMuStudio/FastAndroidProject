@@ -32,11 +32,11 @@ import retrofit2.Retrofit;
  * Author: 洪培林
  * Date: 2017-04-12 18:11
  */
-public final class GsonConverterFactory extends Converter.Factory {
+public final class DefaultConverterFactory extends Converter.Factory {
 
-    private static GsonConverterFactory mFactory;
+    private static DefaultConverterFactory mFactory;
 
-    public static GsonConverterFactory create() {
+    public static DefaultConverterFactory create() {
         if (mFactory != null) {
             return mFactory;
         }
@@ -105,17 +105,17 @@ public final class GsonConverterFactory extends Converter.Factory {
                 }).create());
     }
 
-    public static GsonConverterFactory create(Gson gson) {
+    public static DefaultConverterFactory create(Gson gson) {
         if (mFactory != null) {
             return mFactory;
         }
-        mFactory = new GsonConverterFactory(gson);
+        mFactory = new DefaultConverterFactory(gson);
         return mFactory;
     }
 
     private final Gson gson;
 
-    private GsonConverterFactory(Gson gson) {
+    private DefaultConverterFactory(Gson gson) {
         if (gson == null) {
             throw new NullPointerException("gson == null");
         }
@@ -128,12 +128,12 @@ public final class GsonConverterFactory extends Converter.Factory {
     public Converter<ResponseBody, ?> responseBodyConverter(Type type, Annotation[] annotations, Retrofit retrofit) {
 
         TypeAdapter<?> basicAdapter = gson.getAdapter(TypeToken.get(type));
-        return new GsonResponseBodyConverter<>(basicAdapter, type);
+        return new DefaultResponseBodyConverter<>(basicAdapter, type);
     }
 
     @Override
     public Converter<?, RequestBody> requestBodyConverter(Type type, Annotation[] parameterAnnotations, Annotation[] methodAnnotations, Retrofit retrofit) {
-        return new GsonRequestBodyConverter<>();
+        return new DefaultRequestBodyConverter<>();
     }
 
 }

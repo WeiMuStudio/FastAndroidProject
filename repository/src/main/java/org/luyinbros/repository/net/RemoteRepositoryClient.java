@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import org.luyinbros.log.LogA;
-import org.luyinbros.repository.net.gson.GsonConverterFactory;
+import org.luyinbros.repository.net.gson.DefaultConverterFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -43,7 +43,7 @@ public class RemoteRepositoryClient {
             retrofit = new Retrofit.Builder()
                     .baseUrl(HttpURL.BASE)
                     .client(okHttpClient)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(DefaultConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
             httpClientArray.put(DEFAULT, retrofit);
